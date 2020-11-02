@@ -23,12 +23,10 @@ public class SuperArray {
             this.data[size] = element;
             this.size += 1;
 
-            if (this.data[size].equals(element)) { //Verifies if it was changed
-                return true;
-            }
+            return true;
         } else {
             resize();
-            
+
             this.data[size] = element;
             this.size += 1;
 
