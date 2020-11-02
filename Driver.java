@@ -4,6 +4,15 @@ public class Driver {
         words.add("kani");
         words.add("uni");
         words.add("ebi");
+        words.add("kani");
+        words.add("uni");
+        words.add("ebi");
+        words.add("kani");
+        words.add("uni");
+        words.add("ebi");
+        words.add("kani");
+        words.add("uni");
+        words.add("ebi");
         for(int i = 0; i < words.size(); i++){
             System.out.println( words.get(i) );
         }

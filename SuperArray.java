@@ -5,7 +5,7 @@ public class SuperArray {
 
     private String [] data;
     private int size; //The current size
-    private int buffer;
+    private int buffer; //How much the capacity should increase by after resizing.
 
     public SuperArray() {
         this.data = new String[10];
@@ -23,20 +23,21 @@ public class SuperArray {
             this.data[size] = element;
             this.size += 1;
 
-            return true;
+
+            if (this.size != 0 && this.data[size-1].equals(element)) {
+                return true;
+            }
         } else {
             resize();
 
             this.data[size] = element;
             this.size += 1;
 
-            if (this.data[size].equals(element)) { //Verifies if it was changed
+            if (this.size != 0 && this.data[size-1].equals(element)) {
                 return true;
             }
         }
-
-        return false; //If their is not enough capacity or the adding fails it returns false
-        
+        return false;
     }
 
     public String get(int index) {
