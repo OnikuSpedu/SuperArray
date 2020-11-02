@@ -29,4 +29,11 @@ public class SuperArray {
         return false; //If their is not enough capacity or the adding fails it returns false
         
     }
+
+    public String get(int index) {
+        if (this.size > index) {
+            return this.data[index];
+        }
+        return null;
+    }
 }
