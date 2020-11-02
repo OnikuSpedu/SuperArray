@@ -34,6 +34,15 @@ public class SuperArray {
         if (this.size > index) {
             return this.data[index];
         }
+        return null; //Return null if there is no number at the index
+    }
+
+    public String set(int index, String element) {
+        if (this.size > index) {
+            String old = this.data[index];
+            this.data[index] = element;
+            return old;
+        } 
         return null;
     }
 }
