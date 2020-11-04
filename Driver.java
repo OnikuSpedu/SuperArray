@@ -16,12 +16,11 @@ public class Driver {
         for(int i = 0; i < words.size(); i++){
             System.out.println( words.get(i) );
         }
-        System.out.println(words.toString());
-        System.out.println("Empty?: ");
-        System.out.print(words.isEmpty());
+        System.out.println("Array Data: " + words.toString());
+        System.out.println("Empty?: " + words.isEmpty());
         words.clear();
-        System.out.println("Empty?: ");
-        System.out.print(words.isEmpty());
-        System.out.println(words.toString());
+        System.out.println("Cleared");
+        System.out.println("Empty?: " + words.isEmpty());
+        System.out.println("Array Data: " + words.toString());
     }
 }
