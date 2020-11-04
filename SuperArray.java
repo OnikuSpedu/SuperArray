@@ -73,5 +73,17 @@ public class SuperArray {
         this.data = new String[this.buffer];
     }
 
-    
+    public String toString() {
+        String res = "";
+
+        res += "[";
+
+        for (int i = 0; i < this.size; i++) {
+            res += this.data[i];
+            if (i != this.size - 1) res += ", ";
+        }
+        res += "]";
+        return res;
+    }
+
 }
