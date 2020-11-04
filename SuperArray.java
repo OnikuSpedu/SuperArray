@@ -63,4 +63,34 @@ public class SuperArray {
         }
         this.data = arr;
     }
+
+    public boolean isEmpty() {
+        return this.size == 0;
+    }
+
+    public void clear() {
+        this.size = 0;
+        this.data = new String[this.buffer];
+    }
+
+    public String toString() {
+        String res = "";
+
+        res += "[";
+
+        for (int i = 0; i < this.size; i++) {
+            res += this.data[i];
+            if (i != this.size - 1) res += ", ";
+        }
+        res += "]";
+        return res;
+    }
+
+    public boolean contains(String s) {
+        for (int i = 0; i < this.size; i++) {
+            if (this.data[i].equals(s)) 
+                return true;
+        }
+        return false;
+    }
 }
