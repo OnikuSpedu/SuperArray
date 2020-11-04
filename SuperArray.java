@@ -5,12 +5,12 @@ public class SuperArray {
 
     private String [] data;
     private int size; //The current size
-    private int initCapacity; //How much the capacity should increase by after resizing.
+    private int initialCapacity; //How much the capacity should increase by after resizing.
 
-    public SuperArray() {
+    public SuperArray(int initialCapacity) {
         this.data = new String[10];
         this.size = 0;
-        this.initCapacity = 10;
+        this.initialCapacity = initialCapacity;
     }
 
     public int size() {
@@ -70,7 +70,7 @@ public class SuperArray {
 
     public void clear() {
         this.size = 0;
-        this.data = new String[this.initCapacity];
+        this.data = new String[this.initialCapacity];
     }
 
     public String toString() {
