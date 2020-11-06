@@ -18,25 +18,17 @@ public class SuperArray {
     }
 
     public boolean add(String element) {
-        if (this.data.length > this.size) {
-
-            this.data[size] = element;
-            this.size += 1;
-
-
-            if (this.size != 0 && this.data[size-1].equals(element)) {
-                return true;
-            }
-        } else {
+        if (this.data.length <= this.size) {
             resize();
+        } 
 
-            this.data[size] = element;
-            this.size += 1;
+        this.data[size] = element;
+        this.size += 1;
 
-            if (this.size != 0 && this.data[size-1].equals(element)) {
-                return true;
-            }
+        if (this.size != 0 && this.data[size-1].equals(element)) {
+            return true;
         }
+
         return false;
     }
     public void add(int index, String element) {
@@ -118,4 +110,22 @@ public class SuperArray {
         return false;
     }
     
+    public void remove(int index) {
+        if (index <= this.size && index >= 0) {
+
+            String[] arr = new String[this.data.length];
+
+            for (int i = 0; i < index; i++) {
+                arr[i] = this.data[i];
+            }
+            for (int i = index + 1; i < this.size; i++) {
+                arr[i-1] = this.data[i];
+            }
+
+            this.data = arr;
+            this.size -= 1;
+
+        }
+        
+    }
 }

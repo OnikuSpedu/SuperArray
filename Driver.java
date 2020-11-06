@@ -18,7 +18,10 @@ public class Driver {
             System.out.println("Added \"" + addWords[i] + "\": " + words.add(addWords[i]));
         }
         words.add(1, "1");
-        System.out.println("Contains \"1\": " + words.contains("1"));
         System.out.println("Array Data: " + words);
+        System.out.println("Contains \"1\": " + words.contains("1"));
+        words.remove(1);
+        System.out.println("Array Data: " + words);
+        System.out.println("Contains \"1\": " + words.contains("1"));
     }
 }
