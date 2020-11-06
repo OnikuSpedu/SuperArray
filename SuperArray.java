@@ -7,6 +7,11 @@ public class SuperArray {
     private int size; //The current size
     private int initialCapacity; //How much the capacity should increase by after resizing.
 
+    public SuperArray() {
+        this.data = new String[10];
+        this.size = 0;
+    }
+
     public SuperArray(int initialCapacity) {
         this.data = new String[10];
         this.size = 0;
@@ -110,11 +115,13 @@ public class SuperArray {
         return false;
     }
     
-    public void remove(int index) {
+    public String remove(int index) {
         if (index <= this.size && index >= 0) {
 
             String[] arr = new String[this.data.length];
 
+            String removed = this.data[index];
+            
             for (int i = 0; i < index; i++) {
                 arr[i] = this.data[i];
             }
@@ -124,7 +131,10 @@ public class SuperArray {
 
             this.data = arr;
             this.size -= 1;
+
+            return removed;
         }
+        return null;
     }
 
     public int indexOf(String s) {
