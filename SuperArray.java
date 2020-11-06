@@ -10,6 +10,7 @@ public class SuperArray {
     public SuperArray() {
         this.data = new String[10];
         this.size = 0;
+        this.initialCapacity = 10;
     }
 
     public SuperArray(int initialCapacity) {
