@@ -37,12 +37,21 @@ public class Driver {
         System.out.println("Array Data: " + words);
 
         System.out.println("Removed element at index 0");
-        words.remove(0);
+
+        System.out.println(words.remove(0));
         System.out.println("Array Data: " + words);
 
         System.out.println("indexOf Hey: " + words.indexOf("Hey"));
 
         System.out.println("toArray:");
+        System.out.println(Arrays.toString(words.toArray()));
+
+        words.clear();
+        for(int i = 0; i < 10; i++){
+            System.out.println(words.add("test"));
+        }
+        words.getCapacity();
+        System.out.println(words.remove(-1)); 
         System.out.println(Arrays.toString(words.toArray()));
     }
 }

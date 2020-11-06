@@ -117,7 +117,7 @@ public class SuperArray {
     }
     
     public String remove(int index) {
-        if (index <= this.size && index >= 0) {
+        if (index < this.size && index >= 0) {
 
             String[] arr = new String[this.data.length];
 
@@ -152,5 +152,9 @@ public class SuperArray {
             arr[i] = this.data[i];
         }
         return arr;
+    }
+
+    public int getCapacity(){
+        return this.data.length;
     }
 }
