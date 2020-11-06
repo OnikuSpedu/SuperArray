@@ -39,7 +39,31 @@ public class SuperArray {
         }
         return false;
     }
+    public void add(int index, String element) {
+        if (index <= this.size && index >= 0) {
 
+            if (this.data.length <= this.size) {
+                resize();
+            }
+            
+            String[] arr = new String[this.data.length];
+
+            for (int i = 0; i < index; i++) {
+                arr[i] = this.data[i];
+            }
+
+            arr[index] = element;
+
+            for (int i = index+1; i <= this.size; i++) {
+                arr[i] = this.data[i-1-index];
+            }
+
+            this.data = arr;
+            this.size += 1;
+
+        }
+        
+    }
     public String get(int index) {
         if (this.size > index) {
             return this.data[index];
