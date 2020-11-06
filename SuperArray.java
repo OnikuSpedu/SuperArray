@@ -47,7 +47,7 @@ public class SuperArray {
             arr[index] = element;
 
             for (int i = index+1; i <= this.size; i++) {
-                arr[i] = this.data[i-1-index];
+                arr[i] = this.data[i-1];
             }
 
             this.data = arr;
@@ -124,8 +124,15 @@ public class SuperArray {
 
             this.data = arr;
             this.size -= 1;
-
         }
-        
+    }
+
+    public int indexOf(String s) {
+        for (int i = 0; i < this.size; i++) {
+            if (this.data[i].equals(s)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

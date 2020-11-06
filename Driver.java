@@ -14,14 +14,23 @@ public class Driver {
         System.out.println("Cleared");
         System.out.println("Empty?: " + words.isEmpty());
         System.out.println("Array Data: " + words);
+
         for(int i = 0; i < addWords.length; i++){
             System.out.println("Added \"" + addWords[i] + "\": " + words.add(addWords[i]));
         }
+
+        System.out.println("Array Data: " + words);
         words.add(1, "1");
         System.out.println("Array Data: " + words);
         System.out.println("Contains \"1\": " + words.contains("1"));
+
         words.remove(1);
         System.out.println("Array Data: " + words);
         System.out.println("Contains \"1\": " + words.contains("1"));
+
+        words.add("last");
+        System.out.println("Array Data: " + words);
+
+        System.out.println("indexOf 1: " + words.indexOf("kani"));
     }
 }
