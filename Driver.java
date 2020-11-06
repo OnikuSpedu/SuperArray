@@ -22,22 +22,27 @@ public class Driver {
         }
 
         System.out.println("Array Data: " + words);
+
+        System.out.println("Inserted \"1\" at index 1");
         words.add(1, "1");
         System.out.println("Array Data: " + words);
         System.out.println("Contains \"1\": " + words.contains("1"));
 
+        System.out.println("Removed element at index 1");
         words.remove(1);
         System.out.println("Array Data: " + words);
         System.out.println("Contains \"1\": " + words.contains("1"));
 
-        words.add("last");
+        System.out.println("Added \"last\": " + words.add("last"));
         System.out.println("Array Data: " + words);
 
+        System.out.println("Removed element at index 0");
         words.remove(0);
         System.out.println("Array Data: " + words);
 
         System.out.println("indexOf Hey: " + words.indexOf("Hey"));
 
+        System.out.println("toArray:");
         System.out.println(Arrays.toString(words.toArray()));
     }
 }
