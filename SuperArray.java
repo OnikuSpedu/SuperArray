@@ -135,4 +135,11 @@ public class SuperArray {
         }
         return -1;
     }
+    public String[] toArray() {
+        String[] arr = new String[this.size];
+        for (int i = 0; i < this.size; i++) {
+            arr[i] = this.data[i];
+        }
+        return arr;
+    }
 }

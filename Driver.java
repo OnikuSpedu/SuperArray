@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Driver {
     public static void main(String[] args) {
         SuperArray words = new SuperArray(10);
@@ -31,6 +33,11 @@ public class Driver {
         words.add("last");
         System.out.println("Array Data: " + words);
 
+        words.remove(0);
+        System.out.println("Array Data: " + words);
+
         System.out.println("indexOf Hey: " + words.indexOf("Hey"));
+
+        System.out.println(Arrays.toString(words.toArray()));
     }
 }
