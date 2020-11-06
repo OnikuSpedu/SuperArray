@@ -31,6 +31,6 @@ public class Driver {
         words.add("last");
         System.out.println("Array Data: " + words);
 
-        System.out.println("indexOf 1: " + words.indexOf("kani"));
+        System.out.println("indexOf Hey: " + words.indexOf("Hey"));
     }
 }
