@@ -110,7 +110,6 @@ public class SuperArray {
         return res;
     }
 
-    
     public boolean contains(String s) {
         for (int i = 0; i < this.size; i++) {
             if (this.data[i].equals(s)) 
@@ -118,4 +117,5 @@ public class SuperArray {
         }
         return false;
     }
+    
 }
