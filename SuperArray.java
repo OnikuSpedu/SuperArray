@@ -146,6 +146,14 @@ public class SuperArray {
         }
         return -1;
     }
+    public int lastIndexOf(String s) {
+        for (int i = this.size - 1; i < this.size && i >= 0; i--) {
+            if (this.data[i].equals(s)) {
+                return i;
+            }
+        }
+        return -1;
+    }
     public String[] toArray() {
         String[] arr = new String[this.size];
         for (int i = 0; i < this.size; i++) {
@@ -156,5 +164,14 @@ public class SuperArray {
 
     public int getCapacity(){
         return this.data.length;
+    }
+    public boolean equals(SuperArray other) {
+        if (this.size != other.size()) return false;
+        for (int i = 0; i < this.size(); i++) {
+            if (!get(i).equals(other.get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }

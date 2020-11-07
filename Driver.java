@@ -3,9 +3,9 @@ import java.util.Arrays;
 public class Driver {
     public static void main(String[] args) {
         SuperArray words = new SuperArray(10);
-        String[] addWords = {"kani", "uni", "ebi", "Hey", "this", "is", "a", "test", "yay", "apples", "oranges", "bananas"};
-        for(int i = 0; i < addWords.length; i++){
-            System.out.println("Added \"" + addWords[i] + "\": " + words.add(addWords[i]));
+        String[] addWords0 = {"kani", "uni", "ebi", "Hey", "this", "is", "a", "test", "yay", "apples", "oranges", "bananas"};
+        for(int i = 0; i < addWords0.length; i++){
+            System.out.println("Added \"" + addWords0[i] + "\": " + words.add(addWords0[i]));
         }
         for(int i = 0; i < words.size(); i++){
             System.out.println("At index " + i + ": " + words.get(i));
@@ -17,8 +17,8 @@ public class Driver {
         System.out.println("Empty?: " + words.isEmpty());
         System.out.println("Array Data: " + words);
 
-        for(int i = 0; i < addWords.length; i++){
-            System.out.println("Added \"" + addWords[i] + "\": " + words.add(addWords[i]));
+        for(int i = 0; i < addWords0.length; i++){
+            System.out.println("Added \"" + addWords0[i] + "\": " + words.add(addWords0[i]));
         }
 
         System.out.println("Array Data: " + words);
@@ -53,5 +53,29 @@ public class Driver {
         words.getCapacity();
         System.out.println(words.remove(-1)); 
         System.out.println(Arrays.toString(words.toArray()));
+        System.out.println("lastIndexOf test: " + words.lastIndexOf("test"));
+        
+        SuperArray test0Arr = new SuperArray();
+        for(int i = 0; i < 10; i++){
+            System.out.println(test0Arr.add("test"));
+        }
+        SuperArray test1Arr = new SuperArray();
+        for(int i = 0; i < 11; i++){
+            System.out.println(test1Arr.add("test"));
+        }
+        SuperArray ranArr = new SuperArray();
+        for(int i = 0; i < 10; i++){
+            System.out.println(ranArr.add("ran"));
+        }
+        SuperArray randomArr = new SuperArray();
+        String[] randomArrWords = {"A", "s", "ds", "A", "s", "ds", "A", "s", "ds", "a"};
+        for(int i = 0; i < randomArrWords.length; i++){
+            System.out.println(randomArr.add(randomArrWords[i]));
+        }
+        System.out.println(words +" and " + test0Arr + "equal?: " + words.equals(test0Arr));
+        System.out.println(words +" and " + test1Arr + "equal?: " + words.equals(test1Arr));
+        System.out.println(words +" and " + ranArr + "equal?: " + words.equals(ranArr));
+        System.out.println(words +" and " + randomArr + "equal?: " + words.equals(randomArr));
+
     }
 }
