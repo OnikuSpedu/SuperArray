@@ -6,7 +6,28 @@ public class Demo{
           }
         }
     }
-    
+    public static SuperArray findOverlap(SuperArray a, SuperArray b) {
+      SuperArray arr = new SuperArray();
+      for (int i = 0; i < a.size(); i++) {
+        if (b.contains(a.get(i))) {
+          arr.add(a.get(i));
+        }
+      }
+      removeDuplicates(arr);
+      return arr;
+    }
+    public static SuperArray zip(SuperArray a, SuperArray b){  
+      SuperArray arr = new SuperArray();
+      for(int i = 0; i < a.size() || i < b.size(); i++) {
+        if(a.size() > i) {
+          arr.add(a.get(i));
+        }
+        if(b.size() > i) {
+          arr.add(b.get(i));
+        }
+      }
+      return arr;
+    }
     public static void main(String[]args){
       SuperArray words = new SuperArray();
       //grouped to save vertical space
