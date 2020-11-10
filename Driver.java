@@ -93,13 +93,30 @@ public class Driver {
             System.out.println("initCapacity cannot be negative.");
         }
         try {
-            SuperArray setArray = new SuperArray(0);
+            SuperArray getArray = new SuperArray(0);
             setArray.add("10");
-            setArray.set(10, "0");
+            setArray.get(10);
             System.out.println(setArray);
-        } catch (IllegalArgumentException e) {
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
-            System.out.println("initCapacity cannot be negative.");
+            System.out.println("Index out of bound.");
+        }
+        try {
+            SuperArray removeArray = new SuperArray(0);
+            setArray.add("10");
+            setArray.remove(10);
+            System.out.println(setArray);
+        } catch (IndexOutOfBoundsException e) {
+            e.printStackTrace();
+            System.out.println("Index out of bound.");
+        }
+        try {
+            SuperArray addArray = new SuperArray(0);
+            setArray.add(20, "10");
+            System.out.println(setArray);
+        } catch (IndexOutOfBoundsException e) {
+            e.printStackTrace();
+            System.out.println("Index out of bound.");
         }
     }
 }
