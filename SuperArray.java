@@ -14,6 +14,7 @@ public class SuperArray {
     }
 
     public SuperArray(int initialCapacity) {
+        if (initialCapacity < 0) throw new IllegalArgumentException("Initial capacity cannot be negative. You inputted " + initialCapacity + " as the initial capacity.");
         this.data = new String[10];
         this.size = 0;
         this.initialCapacity = initialCapacity;
@@ -79,7 +80,12 @@ public class SuperArray {
     }
     
     private void resize() {
-        String[] arr = new String[this.size * 2];
+        if (this.size < 0) {
+            String[] arr = new String[this.size * 2];
+        } else {
+            String[] arr = new String[10];
+        }
+        
         for (int i = 0; i < this.data.length; i++) {
             arr[i] = this.data[i];
         }
