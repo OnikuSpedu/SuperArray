@@ -51,7 +51,6 @@ public class Driver {
             System.out.println(words.add("test"));
         }
         words.getCapacity();
-        System.out.println(words.remove(-1)); 
         System.out.println(Arrays.toString(words.toArray()));
         System.out.println("lastIndexOf test: " + words.lastIndexOf("test"));
         
@@ -77,5 +76,30 @@ public class Driver {
         System.out.println(words +" and " + ranArr + "equal?: " + words.equals(ranArr));
         System.out.println(words +" and " + randomArr + "equal?: " + words.equals(randomArr));
 
+        try {
+            SuperArray negativeArray = new SuperArray(-1);
+            System.out.println("Created a SuperArray with a negative initCapacity.");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            System.out.println("Initial capacity cannot be negative.");
+        }
+        try {
+            SuperArray setArray = new SuperArray(0);
+            setArray.add("10");
+            setArray.set(10, "0");
+            System.out.println(setArray);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            System.out.println("initCapacity cannot be negative.");
+        }
+        try {
+            SuperArray setArray = new SuperArray(0);
+            setArray.add("10");
+            setArray.set(10, "0");
+            System.out.println(setArray);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            System.out.println("initCapacity cannot be negative.");
+        }
     }
 }

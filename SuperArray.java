@@ -14,7 +14,9 @@ public class SuperArray {
     }
 
     public SuperArray(int initialCapacity) {
-        if (initialCapacity < 0) throw new IllegalArgumentException("Initial capacity cannot be negative. You inputted " + initialCapacity + " as the initial capacity.");
+        if(initialCapacity < 0) {
+            throw new IllegalArgumentException("Initial capacity cannot be negative. You inputted: " + initialCapacity);
+        }
         this.data = new String[10];
         this.size = 0;
         this.initialCapacity = initialCapacity;
@@ -60,33 +62,38 @@ public class SuperArray {
             this.data = arr;
             this.size += 1;
 
+        } else {
+            throw new IndexOutOfBoundsException("Index " + index + " is out of range. It should be between 0 inclusive and the size of the SuperArray," + this.size + ", exclusive.");
         }
         
     }
     public String get(int index) {
-        if (this.size > index) {
+        if (index >= 0 && this.size > index) {
             return this.data[index];
+        } else {
+            throw new IndexOutOfBoundsException("Index " + index + " is out of range. It should be between 0 inclusive and the size of the SuperArray," + this.size + ", exclusive.");
         }
-        return null; //Return null if there is no number at the index
     }
 
     public String set(int index, String element) {
-        if (this.size > index) {
+        if (index >= 0 && this.size > index) {
             String old = this.data[index];
             this.data[index] = element;
             return old;
-        } 
-        return null;
+        } else {
+            throw new IndexOutOfBoundsException("Index " + index + " is out of range. It should be between 0 inclusive and the size of the SuperArray," + this.size + ", exclusive.");
+        }
     }
     
     private void resize() {
-        if (this.size < 0) {
-            String[] arr = new String[this.size * 2];
+        String[] arr = null;
+        if (this.data.length > 0) {
+            arr = new String[this.data.length * 2];
         } else {
-            String[] arr = new String[10];
+            arr = new String[10];
         }
         
-        for (int i = 0; i < this.data.length; i++) {
+        for (int i = 0; i < this.size; i++) {
             arr[i] = this.data[i];
         }
         this.data = arr;
@@ -140,8 +147,9 @@ public class SuperArray {
             this.size -= 1;
 
             return removed;
+        } else {
+            throw new IndexOutOfBoundsException("Index " + index + " is out of range. It should be between 0 inclusive and the size of the SuperArray," + this.size + ", exclusive.");
         }
-        return null;
     }
 
     public int indexOf(String s) {
